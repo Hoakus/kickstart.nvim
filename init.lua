@@ -194,6 +194,22 @@ require('lazy').setup({
     lazy = false,
   },
 
+  {
+    'folke/noice.nvim',
+    event = 'VeryLazy',
+    opts = {
+      -- add any options here
+    },
+    dependencies = {
+      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+      'MunifTanjim/nui.nvim',
+      -- OPTIONAL:
+      --   `nvim-notify` is only needed, if you want to use the notification view.
+      --   If not available, we use `mini` as the fallback
+      'rcarriga/nvim-notify',
+    },
+  },
+
   -- NOTE: Plugins can also be configured to run Lua code when they are loaded.
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
@@ -512,7 +528,7 @@ require('lazy').setup({
       --  Feel free to add/remove any LSPs that you want here. They will automatically be installed.
       local servers = {
         -- clangd = {},
-        -- gopls = {},
+        gopls = {},
         basedpyright = {
           settings = {
             basedpyright = {
